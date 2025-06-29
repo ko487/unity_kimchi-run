@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BackgroundScroll : MonoBehaviour
+public class backgroundScroll1 : MonoBehaviour
 {
     [Header("Settings")]
     [Tooltip("How fast shoud the  texture scroll?")]
