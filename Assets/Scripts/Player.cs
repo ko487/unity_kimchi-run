@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     private const int max_lives = 3;
     private int lives = max_lives;
     private bool isInvincible = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
