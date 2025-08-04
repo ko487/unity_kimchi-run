@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     private bool isGrounded = true;
     private const int max_lives = 3;
     private int lives = max_lives;
-    private bool isInvincible = false;
+    public bool isInvincible = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -35,7 +35,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    void KillPlayer()
+    public void KillPlayer()
     {
         boxcolider2d.enabled = false;
         playeranimator.enabled = false;
@@ -44,16 +44,12 @@ public class Player : MonoBehaviour
 
     void Hit()
     {
-        lives -= 1;
-        if (lives == 0)  // damaged & life check
-        {
-            KillPlayer();
-        }
+        GameManager.Instance.Lives -= 1;
     }
 
     void Heal()
     {
-        lives = Mathf.Min(max_lives, lives + 1);    // return which minimum
+        GameManager.Instance.Lives = Mathf.Min(max_lives, GameManager.Instance.Lives + 1);    // return which minimum
     }
 
     void StartInvincible()
